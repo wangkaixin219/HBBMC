@@ -17,32 +17,36 @@ cmake ..
 make
 ```
 
-After running the codes, there will be an executable file called `MCE`, which means you have already compiled our codes. 
+After running the above commands, there will be an executable file called `MCE`. 
 
 ## Step 1 - Enumeration Procedure
 
 To enumerate all maximal cliques in the graph, the running command is: 
 
 ```bash
-./MCE /PATH_TO_DATA
+./MCE /PATH_TO_DATA t
 ```
 
 For example, 
 
 ```bash
-./MCE  
-./MCE ../../dataset/nasasrb.clean
+./MCE ../../dataset/dblp.clean 3     # Enumerate maximal cliques in `dblp` with early-termination in 3-plex
+./MCE ../../dataset/youtube.clean 2  # Enumerate maximal cliques in `youtube` with early-termination in 3-plex
 ```
 
-For `facebook` dataset, it outputs
+For `dblp` dataset, it outputs
 
 ```
-
+Reading the graph.
+Finish reading the graph. |V| = 317080, |E| = 1049866
+#mc = 257551, runtime = 163.666 ms
 ```
 
-For `nasasrb` dataset, it outputs
+For `youtube` dataset, it outputs
 
 ```
-
+Reading the graph.
+Finish reading the graph. |V| = 1134890, |E| = 2987624
+#mc = 3265956, runtime = 1459.230 ms
 ```
 
