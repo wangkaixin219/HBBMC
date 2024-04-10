@@ -13,4 +13,4 @@ else(OPENMP_FOUND)
 endif(OPENMP_FOUND)
 
 
-add_executable(MCE main.cpp tool.cpp tool.h tomita.cpp tomita.h hash.hpp)
+add_executable(MCE tool.cpp tool.h enum.cpp enum.h hash.hpp)

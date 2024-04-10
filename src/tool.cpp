@@ -326,6 +326,8 @@ void Heap_t::make_heap(const int *v_list, unsigned int v_size) {
     }
 }
 
+extern int p;
+
 Stack_t::Stack_t() = default;
 
 Stack_t::~Stack_t() {
@@ -339,6 +341,7 @@ void Stack_t::make_stack(int size) {
     this->n = size;
     this->v_list = (int*) malloc(size * sizeof(int));
     this->top = 0;
+    p = 2;
 }
 
 bool Stack_t::empty() {

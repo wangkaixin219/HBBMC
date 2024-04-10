@@ -38,11 +38,11 @@ public:
     Tomita_t(const char* r_file);
     ~Tomita_t();
 
-//    void Tomita_pivot();      // degeneracy + Tomita
-//    void Tomita_pivot_rec(int l);
-//
-//    void Tomita_opt();      // degeneracy + Tomita
-//    void Tomita_opt_rec(int l);
+    void Tomita_pivot();      // degeneracy + Tomita
+    void Tomita_pivot_rec(int l);
+
+    void Tomita_opt();      // degeneracy + Tomita
+    void Tomita_opt_rec(int l);
 
     // Pivot + Matrix implementation
     void Tomita_pivot_mat();
@@ -59,7 +59,7 @@ public:
 //    void list_in_1plex(int l);
 //    void list_in_2plex(int l);
 //    void list_in_3plex(int l);
-//    void list_in_plex(int l);
+    void list_in_plex(int l);
 };
 
 
