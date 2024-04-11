@@ -6,9 +6,13 @@ This repository contains the codes and datasets for maximal clique enumeration e
 
 To run the codes correctly, please ensure that (1) you have installed `cmake (minimum version 3.16)` on your computer or server since we need to use cmake to generate `Makefile` to compile our codes and (2) the graph data should contain no self-loops and no duplicate edges. 
 
-## Step 0 - Compile the codes
+## Step 0 - Download and compile the codes
 
-When you already download the codes, run the following commands to compile our codes. 
+To download the codes and datasets, there are two options: (1) you can download HBBMC.zip and unzip it or (2) you can each file in `src/` and `dataset/` (remember to keep the folder's structure). 
+
+Once you already download the codes and the datasets, you will have two folders (i.e., `src/` and `dataset`). 
+
+Run the following commands to compile our codes. 
 
 ```bash
 cd src/
