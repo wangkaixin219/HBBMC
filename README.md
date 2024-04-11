@@ -8,9 +8,24 @@ To run the codes correctly, please ensure that (1) you have installed `cmake (mi
 
 ## Step 0 - Download and compile the codes
 
-To download the codes and datasets, there are two options: (1) you can download HBBMC.zip and unzip it or (2) you can each file in `src/` and `dataset/` (remember to keep the folder's structure). 
+To download the codes and datasets, there are two options: (1) you can download HBBMC.zip and unzip it or (2) you can download each file in `src/` and `dataset/`. Remember to keep the forlder's structure, shown as follows. 
 
-Once you already download the codes and the datasets, you will have two folders (i.e., `src/` and `dataset`). 
+```bash
+.(HBBMC)
+├── dataset
+│   ├── dblp.clean
+│   └── youtube.clean
+└── src
+    ├── CMakeLists.txt
+    ├── edge_oriented.cpp
+    ├── edge_oriented.h
+    ├── enum.cpp
+    ├── enum.h
+    ├── graph.hpp
+    ├── hash.hpp
+    ├── tool.cpp
+    └── tool.h
+``` 
 
 Run the following commands to compile our codes. 
 
