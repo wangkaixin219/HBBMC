@@ -126,17 +126,17 @@ void Tomita_t::Tomita_pivot_mat() {
     heap.make_heap(d, g.v_size);
     for (i = 0; i < g.v_size; i++) {
         kv = heap.pop();
-        core_num = kv.val > core_num ? kv.val : core_num;
+        md = kv.val > md ? kv.val : md;
         rank[kv.key] = i;
         for (j = 0; j < d[kv.key]; j++)
             heap.update(adj[kv.key][j]);
     }
 
-//    mat = (int**) malloc((core_num + 1) * sizeof(int*));
-//    for (i = 0; i <= core_num; i++) mat[i] = (int*) calloc(g.v_size, sizeof(int));
+//    mat = (int**) malloc((md + 1) * sizeof(int*));
+//    for (i = 0; i <= md; i++) mat[i] = (int*) calloc(g.v_size, sizeof(int));
 //    v2d = (int*) malloc(g.v_size * sizeof(int));
 
-    R.make_stack(core_num + 2);
+    R.make_stack(md + 2);
 
     for (u = 0; u < g.v_size; u++) {
         P_size[1] = 0;
@@ -165,8 +165,6 @@ void Tomita_t::Tomita_pivot_mat() {
 //            }
 //        }
 
-        if (u % 10000 == 0)
-            printf("vertex %d: |P| = %d, |X| = %d\n", u, P_size[1], X_size[1]);
 
         R.push(u);
 
@@ -190,9 +188,8 @@ void Tomita_t::Tomita_pivot_mat() {
 
     }
 
-    printf("#mc = %llu\n", maximal_clique);
 
-//    for (i = 0; i <= core_num; i++) free(mat[i]);
+//    for (i = 0; i <= md; i++) free(mat[i]);
 //    free(mat);
 //
 //    free(v2d);
@@ -357,7 +354,7 @@ void Tomita_t::Tomita_opt_mat() {
 		}
 	}
 
-	//    for (i = 0; i <= core_num; i++) free(mat[i]);
+	//    for (i = 0; i <= md; i++) free(mat[i]);
 	//    free(mat);
 	//
 	//    free(v2d);
@@ -591,15 +588,14 @@ void Tomita_t::Tomit_rev_mat() {
     heap.make_heap(d, g.v_size);
     for (i = 0; i < g.v_size; i++) {
         kv = heap.pop();
-        core_num = kv.val > core_num ? kv.val : core_num;
+        md = kv.val > md ? kv.val : md;
         rank[kv.key] = i;
         for (j = 0; j < d[kv.key]; j++)
             heap.update(adj[kv.key][j]);
     }
 
-    printf("Core number = %d\n", core_num);
 
-    R.make_stack(core_num + 2);
+    R.make_stack(md + 2);
 
     for (u = 0; u < g.v_size; u++) {
         P_size[1] = 0;
@@ -616,8 +612,6 @@ void Tomita_t::Tomit_rev_mat() {
             }
         }
 
-        if (u % 10000 == 0)
-            printf("vertex %d: |P| = %d, |X| = %d\n", u, P_size[1], X_size[1]);
 
 
         R.push(u);
@@ -632,7 +626,6 @@ void Tomita_t::Tomit_rev_mat() {
         }
     }
 
-    printf("#mc = %llu\n", maximal_clique);
 
 }
 
